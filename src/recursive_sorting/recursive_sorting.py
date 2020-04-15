@@ -38,15 +38,12 @@ def merge(arrA, arrB):
 
 def merge_sort(arr):
     # TO-DO
-    arr.sort()
 
-    if len(arr) < 1:
-        return arr
-    else:
+    if len(arr) > 1:
         mid = math.floor(len(arr)/2)
         a = arr[0:mid]
         b = arr[mid:]
-        arr = merge(a, b)
+        arr = merge(merge_sort(a), merge_sort(b))
 
     return arr
 
